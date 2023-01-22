@@ -1,0 +1,193 @@
+/* ueen css styles
+
+principles of good css:
+
+1. uniques IDs via ID tag
+2. some common stuff via class tag
+
+*/
+
+body {
+    background-color: #006CFF;
+    font-family: 'Helvetica Neue';
+    color: #FFFFFF;
+    text-align: justify;
+
+}
+
+/* texts */
+
+p {
+    font-size: small;
+
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 200;
+}
+
+h3 {
+    font-weight: 300;
+
+}
+
+h4 {}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(255, 77, 240);
+}
+
+/* classes - Bootstrap */
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+.nav-link:hover {
+    color: rgb(255, 77, 240);
+    text-decoration: line-through;
+}
+
+/* classes - personal */
+
+.container {}
+
+.img-rounded {
+    border-radius: 100%;
+}
+
+/* special class - spacers */
+
+.spacer-5rem {
+    height: 5rem;
+    width: 100%;
+}
+
+.spacer-10rem {
+    height: 10rem;
+    width: 100%;
+}
+
+.spacer-20rem {
+    height: 20rem;
+    width: 100%;
+}
+
+.spacer-30rem {
+    height: 30rem;
+    width: 100%;
+}
+
+
+/* special class - infinite showcase */
+
+#showcase-container {
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+
+    background-color: #FFFFFF;
+    align-items: center;
+}
+
+.photobanner {
+    position: absolute;
+    top: 15%;
+    left: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: bannermove 20s linear infinite;
+}
+
+.photobanner-inverse {
+    position: absolute;
+    top: 15%;
+    left: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: bannermove-inverse 20s linear infinite;
+}
+
+.photobanner img {
+    margin: 0 2em
+}
+
+.photobanner-inverse img {
+    margin: 0 2em
+}
+
+@keyframes bannermove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes bannermove-inverse {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+
+/* IDs */
+
+/* navbar */
+#main-navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background: transparent;
+    position: fixed;
+
+    top: 0%;
+    width: 100%;
+
+}
+
+/* pages */
+#landing-page-main {
+
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+/* 2-section pages */
+#page-section-main {
+    width: 60%;
+}
+
+#page-section-minor {
+    width: 40%;
+}
+
+/* page vertical */
+
+#page-vertical {
+    display: block;
+    text-align: center;
+}
+
+/* logo */
+#ueen-logo {
+    font-weight: bold;
+}
