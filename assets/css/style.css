@@ -1,193 +1,119 @@
-/* ueen css styles
+@import "tailwindcss";
 
-principles of good css:
+@theme {
 
-1. uniques IDs via ID tag
-2. some common stuff via class tag
+    /* fonts */
+    --font-sans: 'Helvetica Neue';
 
-*/
+    /* colors */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
 
-body {
-    background-color: #006CFF;
-    font-family: 'Helvetica Neue';
-    color: #FFFFFF;
-    text-align: justify;
-
+    /* custom colors */
+    --color-primary: #003ECF;
 }
 
-/* texts */
-
-p {
-    font-size: small;
-
+@layer base {
+    body {
+        @apply bg-primary font-sans flex flex-col;
+    }
 }
 
-h1 {
-    font-weight: 400;
-}
-
-h2 {
-    font-weight: 200;
-}
-
-h3 {
-    font-weight: 300;
-
-}
-
-h4 {}
-
-a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-a:hover {
-    color: rgb(255, 77, 240);
-}
-
-/* classes - Bootstrap */
-
-.nav-link {
-    color: #FFFFFF;
-}
-
-.nav-link:hover {
-    color: rgb(255, 77, 240);
-    text-decoration: line-through;
-}
-
-/* classes - personal */
-
-.container {}
-
-.img-rounded {
-    border-radius: 100%;
-}
-
-/* special class - spacers */
-
-.spacer-5rem {
-    height: 5rem;
-    width: 100%;
-}
-
-.spacer-10rem {
-    height: 10rem;
-    width: 100%;
-}
-
-.spacer-20rem {
-    height: 20rem;
-    width: 100%;
-}
-
-.spacer-30rem {
-    height: 30rem;
-    width: 100%;
-}
-
-
-/* special class - infinite showcase */
-
-#showcase-container {
-    height: 150px;
-    position: relative;
+/* terminal styles */
+#terminal {
+    background: #0d0d0d;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
     overflow: hidden;
-
-    background-color: #FFFFFF;
-    align-items: center;
+    border: 1px solid #2a2a2a;
+    min-width: 320px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
-.photobanner {
-    position: absolute;
-    top: 15%;
-    left: 0px;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: bannermove 20s linear infinite;
-}
-
-.photobanner-inverse {
-    position: absolute;
-    top: 15%;
-    left: 0px;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: bannermove-inverse 20s linear infinite;
-}
-
-.photobanner img {
-    margin: 0 2em
-}
-
-.photobanner-inverse img {
-    margin: 0 2em
-}
-
-@keyframes bannermove {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-50%, 0);
-    }
-}
-
-@keyframes bannermove-inverse {
-    0% {
-        transform: translate(-50%, 0);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-
-
-/* IDs */
-
-/* navbar */
-#main-navbar {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    background: transparent;
-    position: fixed;
-
-    top: 0%;
-    width: 100%;
-
-}
-
-/* pages */
-#landing-page-main {
-
+#titlebar {
+    background: #1a1a1a;
+    padding: 10px 14px;
     display: flex;
     align-items: center;
-    padding-left: 0;
+    gap: 7px;
+    border-bottom: 1px solid #2a2a2a;
 }
 
-/* 2-section pages */
-#page-section-main {
-    width: 60%;
+#titlebar .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
 }
 
-#page-section-minor {
-    width: 40%;
+#titlebar span {
+    color: #555;
+    font-size: 12px;
+    margin-left: 8px;
 }
 
-/* page vertical */
+#output {
+    padding: 16px;
+    min-height: 280px;
+    color: #00cc66;
+    line-height: 1.8;
+    flex: 1;
+    overflow-y: auto;
 
-#page-vertical {
-    display: block;
-    text-align: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* logo */
-#ueen-logo {
-    font-weight: bold;
+#output::-webkit-scrollbar {
+    display: none;
+}
+
+#output .line {
+    white-space: pre-wrap;
+}
+
+#output .dim {
+    color: #555;
+}
+
+#output .bright {
+    color: #00ff7f;
+    font-weight: 500;
+}
+
+#output .dir {
+    color: #00cc66;
+}
+
+#output .err {
+    color: #ff4444;
+}
+
+#output .info {
+    color: #888;
+}
+
+#input-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px 16px;
+    gap: 6px;
+}
+
+#prompt {
+    color: #00cc66;
+    white-space: nowrap;
+}
+
+#cmd-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    flex: 1;
+    caret-color: #00ff7f;
 }
